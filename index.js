@@ -1,5 +1,5 @@
 import { config } from 'dotenv';
-config();
+
 import express, { json, urlencoded } from 'express';
 import router from './app/router';
 

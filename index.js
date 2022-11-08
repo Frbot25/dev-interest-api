@@ -1,15 +1,15 @@
-require('dotenv').config();
-const express = require('express');
-const router = require('./app/router');
+import { config } from 'dotenv';
+import express, { json, urlencoded } from 'express';
+import router from './app/router';
 
 //sécurité:
-const cors = require('cors');//protéger l'accès à notre API
-const bodySanitizer = require('./app/middlewares/body-sanitizer');//éviter attaques XSS
+import cors from 'cors';//protéger l'accès à notre API
+import bodySanitizer from './app/middlewares/body-sanitizer';//éviter attaques XSS
 
 const app = express();
-app.use(express.json());
+app.use(json());
 const port = process.env.PORT || 3000;
-app.use(express.urlencoded({extended:false}));
+app.use(urlencoded({extended:false}));
 
 //sécurité:
 app.use(bodySanitizer);

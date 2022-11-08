@@ -1,0 +1,68 @@
+@baseurl=http://localhost:3000
+
+### --- login
+POST {{baseurl}}/login
+Content-Type: application/json
+
+{
+    "email": "virginie@mail.io",
+    "password": "1234",
+    "username": "Virginie"
+}
+
+### --- Afficher les cartes
+GET {{baseurl}}/cards
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTYzMjgxNTIzMSwiZXhwIjoxNjMyODE3MDMxfQ.8Dgp65KsU208HzMIn0qohH8Tu2ynvGF484c7XHzRsuA
+
+### --- Afficher les favoris par l'id
+GET {{baseurl}}/users/5/bookmarks
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTYzMjY3NDMzNywiZXhwIjoxNjMyNjc2MTM3fQ.OWIzWn5bFNxBpBacsmRLQ_C_UFTfmCiZ9d04yFRWJQQ
+
+### - afficher le compte utilisateur
+GET {{baseurl}}/users/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTYzMjgxNDYxNSwiZXhwIjoxNjMyODE2NDE1fQ.IsHi91sj0XJy1L5DuvsKPIqdittUXdCLQjyLH6vMjzg
+
+### - ajoute un favori
+POST {{baseurl}}/cards/65/bookmarks
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTYzMjg0OTMxMiwiZXhwIjoxNjMyODUxMTEyfQ.H2_zECnqSH7QlvAMwN5f3VSwWvyB4LSCZYMYPLYRyFI
+
+### - modifier une carte
+PUT  {{baseurl}}/contributor/cards/72
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTYzMzE5NzU4OSwiZXhwIjoxNjMzMTk5Mzg5fQ.2yBfUi_RO2dOczCkrWKEKLxMSmbtGDsItNp_9Z7ozGs
+Content-Type: application/json
+
+{
+	"techs": [
+		"2",
+		"5",
+		"11"
+	]
+}
+
+### recherche
+get {{baseurl}}/cards/search?keyword=css&tech=javascript&category=all&level=all&type=all&lang=all&page=1&size=3
+
+### recherche
+get {{baseurl}}/cards/search?keyword=javascript&tech=all&category=all&level=all&type=all&lang=all&page=1&size=15
+>>>>>>> 45cbd31d5746ee894be1eead720be71d7965f8fe
+
+https://devinterest.herokuapp.com/cards/search?keyword=javascript&tech=css&category=all&level=all&type=all&lang=all&page=1&size=15
+post {{baseurl}}/cards
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTYzMzk2MDk4MywiZXhwIjoxNjMzOTYyNzgzfQ.NBYI0KCL2qVbtJUDxYKdXyrDzcyOnD4LlVEdZ0jEgVI
+
+Content-Type: application/json
+
+{
+    "url": "https://www.bortzmeyer.org/postgresql-recherche-texte.html"
+}
+
+### détails d'une carte
+
+get {{baseurl}}/cards/test-slug/164
+
+### verification de présence d'un élément
+get {{baseurl}}/verify?input=user_name&value=virgin
+
+### détails d'une carte pour update
+get {{baseurl}}/update/164
+
